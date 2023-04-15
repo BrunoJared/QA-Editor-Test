@@ -1,0 +1,8 @@
+
+1-There are different techniques for software testing, such as test analysis and test design. Test analysis helps understand the requirements and develop the testing strategy, while test design creates detailed test cases, suites, and scripts. Some techniques for test analysis are risk-based, requirements-based, and scenario-based testing. For test design, some techniques are boundary value analysis, equivalence partitioning, and decision table testing.
+
+2-Test analysis helps understand what needs to be tested, while test design focuses on how it should be tested.
+
+3-Test cases are good to verify if software meets requirements, but they can be time-consuming and expensive to create and maintain. They only test specific conditions, so they can't guarantee that software is defect-free.
+
+4-To check if a feature is tested, a comprehensive test plan is needed. Each test case should be executed and compared to expected results. If all test cases pass, the feature is considered tested. However, it's important to keep in mind that testing only provides a certain level of confidence in software quality and can't guarantee that it's free of defects.
