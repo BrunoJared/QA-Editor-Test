@@ -1,0 +1,19 @@
+package array;
+
+import java.util.Arrays;
+
+public class arrayReverseOrder {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] reversedArr = reverseArray(arr);
+        System.out.println(Arrays.toString(reversedArr));
+    }
+
+    public static int[] reverseArray(int[] arr) {
+        int[] reversedArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversedArr[arr.length - i - 1] = arr[i];
+        }
+        return reversedArr;
+    }
+}
