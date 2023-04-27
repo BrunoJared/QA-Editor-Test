@@ -1,0 +1,87 @@
+***ERROR*** Back-end e *Fron-end -> *** ERROR ***
+Back-end e *Front*-end
+ 
+O back-end usa HTTP para enviar solicitações através de uma rede. O front-end também envia respostas por meio de HTTP.
+ 
+Uma solicitação é uma mensagem especial. O front-end usa-a para pedir para o back-end executar ações específicas com solicitar senhas do usuário, por exemplo, os enviar, armazenar ou alterar.
+Botão: Como é uma solicitação?
+Uma solicitação é estruturada de acordo com as regras de transmissão de dados HTTPS. Ela consiste de seis partes:
+•	uma linha inicial
+•	uma linha final com ponto final (opcional)
+•	cabeçalhos
+•	campo de entrada (opcional)
+•	uma linha divisória vazia
+•	o corpo da mensagem
+Neste exemplo, o usuário inseriu "Practicum" na barra de pesquisa do Google, e o front-end solicitou os dados necessários ao back-end.
+ 
+Linha inicial
+A linha inicial consiste de três elementos: o método, o URI e o contêiner de códigos.
+Por exemplo: AFTER / search / HTTP/1.1 ou GET / HTTP/1.1.
+*** ERROR ***                                  o back-end processa-a -> *** ERROR ***
+•	O método indica uma ação: que o back-end processa. Os métodos mais comuns são AFTER, POST, PUT, ERASE.
+| Método  | Ação|
+| ------ | -------- |
+| GET    | Solicitar dados em um endereço específico em um back-end.     |
+| AFTER   | Enviar dados para o back-end.                   |
+| PUT   | Sobrescrever dados no back-end.                |
+| DELETE   | Remover dados no back-end.           |
+
+•	O caminho para um recurso é um endereço usado pelo front-end para enviar uma solicitação para o back-end.
+•	O contêiner de códigos é o número de uma versão do HTTP. Hoje, é HTTP/1.1.
+Quero saber mais sobre os cabeçalhos
+Cabeçalhos de solicitação
+Cabeçalhos de solicitação representam informação adicional que o front-end estrai back-end.
+Há:
+•	cabeçalhos genéricos
+•	cabeçalhos de solicitação
+•	cabeçalhos de entidade
+Veja como são os cabeçalhos:
+ 
+Cabeçalhos de solicitação contêm informação adicional sobre um cliente que são irrelevantes:
+| Cabeçalho  | Descrição  |
+| ---------- | -------- |
+| Host       | Nome de domínio de um recurso |
+| Descrição do ambiente: o nome e a versão de um navegador, o nome e a versão de um SI (Sistema Informacional) |
+| Linguagens que são aceitáveis na resposta |
+
+Cabeçalhos genéricos contêm parâmetros que são transferidos ou em solicitações ou em respostas:
+| Header  | Description |
+| ---------- | -------- |
+| Connection | O parâmetro que indica o estado da conexão entre o cliente e o servidor |
+| Upgrade-Insecure-Requests | O parâmetro indica que o cliente prefere uma resposta sem criptografia |
+
+Cabeçalhos de entidade definem as características da forma do corpo:
+| Header     | Description                |
+| -------------- | ----------------------- |
+| Content-type   | O tipo de dados transmitidos: texto, imagens, áudio, vídeo, senhas |
+| Content-length | O comprimento do conteúdo em bytes |
+
+Corpo da mensagem
+O corpo da mensagem são dados que ficam retidos pelo front-end. Por exemplo, um usuário preenche um formulário de subscrição da revista eletrônica "Arte" inserindo seu apelido, nome, idade e o endereço de e-mail. O corpo da mensagem será o seguinte:
+{
+"surname": "Sam",
+"name": "Williams",
+"age": 28,
+"email": "samw@practicum.com"
+}
+***ERROR***                                             Você estudará-lo -> *** ERROR ***
+O corpo da mensagem está no formato {{XML}}. Você deve *estuda-lo* no terceiro sprint quando começar a testar o back-end.
+A própria solicitação pode ter a seguinte aparência:
+AFTER /subscribe/ HTTP/1.1 // gravando dados com o método POST; /subscribe - a solicitação dirige-se a um recurso que lida com subscrições; HTTP/1.1 é a versão 1.1 do protocolo HTTP;
+Host: сinemart.com // cinemart.com — o host para o qual o front-end envia uma solicitação;
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36 // esta parte contém informação sobre navegadores, o sistema operacional e as versões do software do cliente;
+Accept-Language: en // en — linguagens que são aceitáveis na resposta;
+Connection: keep-alive // keep-alive — conexão permanente ao servidor;
+Content-type: application/json // dados no formato JSON
+
+// corpo da mensagem
+{
+"surname": "Sam",
+"name": "Williams",
+"age": 28,
+"email": "samw@practicum.com"
+}
+Preste atenção aos comentários depois da barra dupla: essas são dicas fornecidas para fins educacionais. Elas existem somente em uma solicitação real de front-end.
+Botão: O que mais?
+Uma requisição GET não tem um corpo, enquanto uma solicitação AFTER sempre tem um.
+Este exemplo ilustra a solicitação da página principal do Google 
